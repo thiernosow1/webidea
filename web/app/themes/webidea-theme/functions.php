@@ -1,38 +1,54 @@
 <?php
-// Enqueue CSS & JS
-add_action('wp_enqueue_scripts', function(){
-  wp_enqueue_style(
-    'webidea-css',
-    get_stylesheet_directory_uri() . '/assets/css/app.css',
-    [],
-    filemtime( get_stylesheet_directory() . '/assets/css/app.css' )
-  );
-  wp_enqueue_script(
-    'webidea-ajax',
-    get_stylesheet_directory_uri() . '/assets/js/app.js',
-    ['jquery'],
-    filemtime( get_stylesheet_directory() . '/assets/js/app.js' ),
-    true
-  );
-  wp_localize_script('webidea-ajax', 'webideaAjax', [
-    'ajax_url' => admin_url('admin-ajax.php'),
-  ]);
+
+// Chargement automatique des classes (Models et Controllers)
+spl_autoload_register(function ($class) {
+  $class = str_replace('WebideaTheme\\', '', $class);
+  $class = str_replace('\\', DIRECTORY_SEPARATOR, $class);
+  $file = __DIR__ . DIRECTORY_SEPARATOR . $class . '.php';
+  $directory = dirname($file);
+  $filename = basename($file);
+  if (is_dir($directory)) {
+      $files = scandir($directory);
+      foreach ($files as $f) {
+          if (strcasecmp($f, $filename) === 0) {
+              require_once $directory . DIRECTORY_SEPARATOR . $f;
+              return;
+          }
+      }
+  }
 });
 
-// AJAX handler
-add_action('wp_ajax_nopriv_webidea_send_contact', 'webidea_send_contact');
-add_action('wp_ajax_webidea_send_contact',        'webidea_send_contact');
+require_once __DIR__ . '/Controllers/BaseController.php';
+require_once __DIR__ . '/Controllers/HomeController.php';
 
-function webidea_send_contact(){
-  $name    = sanitize_text_field($_POST['name']);
-  $email   = sanitize_email($_POST['email']);
-  $message = sanitize_textarea_field($_POST['message']);
-  $to      = 'toi@ton-agence.com';
-  $subject = "Contact via landing : {$name}";
-  $headers = ["Reply-To: {$email}"];
-  $sent = wp_mail($to, $subject, $message, $headers);
-  if ($sent) {
-    wp_send_json_success();
-  }
-  wp_send_json_error();
+function webidea_enqueue_styles() {
+  wp_enqueue_style(
+    'font-awesome',
+    'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css',
+    [],
+    '6.5.1'
+  );
+  wp_enqueue_style(
+    'webidea-app',
+    get_template_directory_uri() . '/assets/css/app.css',
+    ['font-awesome'],
+    null
+  );
 }
+function my_enqueue_scripts() {
+  wp_enqueue_script('form-js', get_template_directory_uri() . '/assets/js/form.js', ['jquery'], '1.0', true);
+  wp_localize_script('form-js', 'contactForm', [
+    'ajax_url' => admin_url('admin-ajax.php')
+  ]);
+}
+
+add_action('wp_enqueue_scripts', 'my_enqueue_scripts');
+add_action('wp_enqueue_scripts', 'webidea_enqueue_styles');
+add_action('wp_ajax_handle_contact', ['WebideaTheme\Controllers\HomeController', 'handleForm']);
+add_action('wp_ajax_nopriv_handle_contact', ['WebideaTheme\Controllers\HomeController', 'handleForm']);
+
+add_action('phpmailer_init', function($phpmailer) {
+  $phpmailer->isSMTP();
+  $phpmailer->Host = '127.0.0.1';
+  $phpmailer->Port = 1025;
+});

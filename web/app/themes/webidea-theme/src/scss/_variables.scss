@@ -1,0 +1,47 @@
+// Couleurs principales (extraites de ta charte)
+$color-white: #ffffff;
+$color-light: #eeeeee;
+$color-gray: #dddddd;
+$color-medium-gray: #7f878d;
+$color-dark: #495450;
+$color-primary: #009dea;
+$color-primary-hover: #006fb7;
+$color-primary-light:#04ceff;
+$color-secondary: #cccccc;
+$color-secondary-hover: #b0b0b0;
+$color-inactive: #e0e0e0;
+$color-error: #e53935;
+$color-border: #dddddd;
+$color-background: #f9f9f9;
+$color-text: $color-medium-gray;
+// Typographie (utilise Rubik)
+$font-family-base: 'Rubik',
+sans-serif;
+$font-h1: clamp(2.5rem, 5vw, 4rem); // 40px à 64px
+$font-h2: clamp(2rem, 4vw, 3rem); // 32px à 48px
+$font-h3: clamp(1.5rem, 3vw, 2rem); // 24px à 32px
+$font-h4: clamp(1.25rem, 2.5vw, 1.5rem); // 20px à 24px
+$font-body: clamp(1rem, 2vw, 1.25rem); // 16px à 20px
+$font-small: clamp(0.75rem, 1.5vw, 0.875rem); // 12px à 14px
+$font-button: clamp(1rem, 2vw, 1.125rem); // 16px à 18px
+// Font weights
+$weight-regular: 400;
+$weight-bold: 700;
+// Espacements
+$spacing-xs: clamp(0.25rem, 0.5vw, 0.5rem); // 4px à 8px
+$spacing-sm: clamp(0.5rem, 1vw, 0.75rem); // 8px à 12px
+$spacing-md: clamp(0.75rem, 1.5vw, 1rem); // 12px à 16px
+$spacing-lg: clamp(1rem, 2vw, 1.5rem); // 16px à 24px
+$spacing-xl: clamp(1.5rem, 3vw, 2rem); // 24px à 32px
+$spacing-xxl: clamp(2rem, 4vw, 2.5rem); // 32px à 40px
+$spacing-3xl: clamp(2.5rem, 5vw, 3rem); // 40px à 48px
+$spacing-4xl: clamp(3rem, 6vw, 3.5rem); // 48px à 56px
+$spacing-5xl: clamp(3.5rem, 7vw, 4rem); // 56px à 64px
+$spacing-6xl: clamp(4rem, 8vw, 4.5rem); // 64px à 72px
+$spacing-7xl: clamp(5rem, 9vw, 5.5rem); // 80px à 88px
+$spacing-8xl: clamp(6rem, 10vw, 6.5rem); // 96px à 104px
+// Breakpoints
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1280px;
