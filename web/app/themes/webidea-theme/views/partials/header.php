@@ -17,11 +17,6 @@
         <div class="menu-overlay" id="menu-overlay">
           <div class="menu-content container">
             <div class="menu-close" id="menu-close"></div>
-            <div class="menu-logo">
-              <a href="<?php echo home_url(); ?>">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo_b.svg" alt="Web Idea Logo">
-              </a>
-            </div>
             <nav aria-label="Navigation principale">
               <div class="menu-section">
                 <h3>Création de site internet <i class="fa-solid fa-arrow-right"></i></h3>

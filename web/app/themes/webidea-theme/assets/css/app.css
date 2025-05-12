@@ -122,6 +122,10 @@ header {
 header.sticky {
   background-color: #ffffff;
 }
+header.sticky .logo {
+  position: relative;
+  z-index: 1001;
+}
 
 header .logo img {
   transition: all 0.4s;
@@ -493,6 +497,9 @@ nav ul li a:hover {
   font-size: clamp(0.75rem, 1.5vw, 0.875rem);
   color: #7f878d;
 }
+.contact form .form-group:has(input:focus) {
+  border-color: #7f878d;
+}
 .contact form .form-row {
   display: flex;
   gap: 1rem;
@@ -506,6 +513,7 @@ nav ul li a:hover {
   padding: clamp(0.5rem, 1vw, 0.75rem);
   border: 1px solid #dddddd;
   border-radius: 5px;
+  transition: border-color 0.3s;
 }
 .contact form textarea {
   padding: clamp(0.5rem, 1vw, 0.75rem);
@@ -557,12 +565,12 @@ nav ul li a:hover {
   opacity: 1;
   transform: rotate(-45deg) translate(0, 0);
   border-color: #fff;
-  /* Couleur du Check */
 }
 .contact .form-terms label {
   color: #7f878d;
   font-size: 0.875rem;
   line-height: 1.4;
+  cursor: pointer;
 }
 .contact .error {
   border: 2px solid red;

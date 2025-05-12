@@ -123,6 +123,10 @@
     
     header.sticky {
         background-color: #ffffff;
+        .logo {
+            position: relative;
+            z-index: 1001;
+        }
     }
     
     // .main-header.sticky {
@@ -509,6 +513,9 @@
                 font-size: $font-small;
                 color: $color-medium-gray;
             }
+            .form-group:has(input:focus) {
+                border-color: $color-medium-gray;
+            }
             .form-row {
                 display: flex;
                 gap: 1rem;
@@ -522,6 +529,7 @@
                 padding: $spacing-sm;
                 border: 1px solid $color-border;
                 border-radius: 5px;
+                transition: border-color 0.3s;
             }
             textarea {
                 padding: $spacing-sm;
@@ -574,12 +582,12 @@
             opacity: 1;
             transform: rotate(-45deg) translate(0, 0);
             border-color: #fff;
-            /* Couleur du Check */
         }
         .form-terms label {
             color: $color-medium-gray;
             font-size: 0.875rem;
             line-height: 1.4;
+            cursor: pointer;
         }
         // Gestion des erreurs
         .error {

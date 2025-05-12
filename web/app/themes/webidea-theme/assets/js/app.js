@@ -2,17 +2,21 @@ document.addEventListener("DOMContentLoaded", function() {
     const menuToggle = document.getElementById("menu-toggle");
     const menuOverlay = document.getElementById("menu-overlay");
     const menuClose = document.getElementById("menu-close");
+    const header = document.querySelector("header");
 
     // Ouvrir le menu
     menuToggle.addEventListener("click", function() {
         menuOverlay.classList.toggle("open");
         menuToggle.classList.toggle("open");
+        header.classList.add("sticky");
     });
 
     // Fermer le menu
     menuClose.addEventListener("click", function() {
         menuOverlay.classList.remove("open");
         menuToggle.classList.remove("open");
+        header.classList.remove("sticky");
+
     });
 
     // Fermer le menu quand un lien est cliqué
@@ -20,6 +24,8 @@ document.addEventListener("DOMContentLoaded", function() {
         link.addEventListener("click", function() {
             menuOverlay.classList.remove("open");
             menuToggle.classList.remove("open");
+            header.classList.remove("sticky");
+
         });
     });
 });

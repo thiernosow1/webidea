@@ -33,24 +33,7 @@ $controller = new HomeController();
   </section>
 
   <!-- Section Services -->
-  <!-- <section class="services">
-    <div class="service">
-      <h2>Création de site internet</h2>
-      <ul>
-        <li>Sodales gravida nunc</li>
-        <li>Amet imperdiet</li>
-        <li>Ultrices vestibulum</li>
-      </ul>
-    </div>
-    <div class="service">
-      <h2>Marketing digital</h2>
-      <ul>
-        <li>Dapibus est arcu</li>
-        <li>Amet auctor</li>
-        <li>Praesent condimentum</li>
-      </ul>
-    </div>
-  </section> -->
+
 
   <!-- Section Content -->
   <section class="container"">
