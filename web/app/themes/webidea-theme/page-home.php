@@ -110,18 +110,18 @@ $controller = new HomeController();
       </article>
       <div class="carousel">
           <div class="carousel-track">
-              <div class="carousel-item" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/card-img-1.jpg');">
+              <a href="" class="carousel-item" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/card-img-1.jpg');">
                   <div class="item-text">Duis porta ligula rhoncus euismod pretium<i class="fa-solid fa-arrow-right"></i></div>
-              </div>
-              <div class="carousel-item" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/card-img-2.jpg');">
+              </a>
+              <a href="" class="carousel-item" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/card-img-2.jpg');">
                   <div class="item-text">Duis porta ligula rhoncus euismod pretium<i class="fa-solid fa-arrow-right"></i></div>
-              </div>
-              <div class="carousel-item" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/card-img-1.jpg');">
+              </a>
+              <a href="" class="carousel-item" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/card-img-1.jpg');">
                   <div class="item-text">Duis porta ligula rhoncus euismod pretium<i class="fa-solid fa-arrow-right"></i></div>
-              </div>
-              <div class="carousel-item" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/card-img-2.jpg');">
+              </a>
+              <a href="" class="carousel-item" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/card-img-2.jpg');">
                   <div class="item-text">Duis porta ligula rhoncus euismod pretium<i class="fa-solid fa-arrow-right"></i></div>
-              </div>
+              </a>
           </div>
       </div>
     </div>

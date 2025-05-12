@@ -58,12 +58,25 @@ button.primary {
   color: #ffffff;
 }
 button.primary:hover {
-  background-color: #009dea;
+  background-color: #006fb7;
 }
 button.primary:active {
   background-color: #009dea;
 }
 button.primary:disabled {
+  background-color: #e0e0e0;
+}
+button.secondary {
+  background-color: #009dea;
+  color: #ffffff;
+}
+button.secondary:hover {
+  background-color: #009dea;
+}
+button.secondary:active {
+  background-color: #009dea;
+}
+button.secondary:disabled {
   background-color: #e0e0e0;
 }
 
@@ -380,10 +393,10 @@ nav ul li a:hover {
 }
 
 .pagination .nav-btn {
-  background-color: #009dea;
-  color: #fff;
-  border: none;
-  padding: 0.5rem 1rem;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  color: #dddddd;
+  padding: clamp(0.75rem, 1.5vw, 1rem);
   cursor: pointer;
   font-weight: bold;
   border-radius: 4px;
@@ -391,7 +404,7 @@ nav ul li a:hover {
 }
 
 .pagination .nav-btn:hover {
-  background-color: #006fb7;
+  color: #495450;
 }
 
 /* Carousel */

@@ -58,6 +58,19 @@
             background-color: $color-primary;
             color: $color-white;
             &:hover {
+                background-color: $color-primary-hover;
+            }
+            &:active {
+                background-color: $color-primary;
+            }
+            &:disabled {
+                background-color: $color-inactive;
+            }
+        }
+        &.secondary {
+            background-color: $color-primary;
+            color: $color-white;
+            &:hover {
                 background-color: $color-primary;
             }
             &:active {
@@ -396,10 +409,10 @@
     }
     
     .pagination .nav-btn {
-        background-color: $color-primary;
-        color: #fff;
-        border: none;
-        padding: 0.5rem 1rem;
+        background-color: $color-white;
+        border: 1px solid $color-gray;
+        color: $color-gray;
+        padding: $spacing-md;
         cursor: pointer;
         font-weight: bold;
         border-radius: 4px;
@@ -407,7 +420,7 @@
     }
     
     .pagination .nav-btn:hover {
-        background-color: $color-primary-hover;
+        color: $color-dark;
     }
     /* Carousel */
     
