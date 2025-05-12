@@ -15,8 +15,8 @@
 
         <!-- Menu Overlay -->
         <div class="menu-overlay" id="menu-overlay">
+          <div class="menu-close" id="menu-close"></div>
           <div class="menu-content container">
-            <div class="menu-close" id="menu-close"></div>
             <nav aria-label="Navigation principale">
               <div class="menu-section">
                 <h3>Création de site internet <i class="fa-solid fa-arrow-right"></i></h3>

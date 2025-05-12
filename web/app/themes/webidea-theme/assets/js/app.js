@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
         menuOverlay.classList.toggle("open");
         menuToggle.classList.toggle("open");
         header.classList.add("sticky");
+
     });
 
     // Fermer le menu
